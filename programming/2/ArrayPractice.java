@@ -62,10 +62,10 @@ public class ArrayPractice
   public static int[] buildIncreasingArray( int size, int startValue, int step )
   {
     int[] data = new int[size];
-
+        data[0]= startValue;
     // loop through each element of the array and
     /* YOUR BRILLIANT CODE HERE */
-   for(int index = 0; index < data.length; index ++)
+   for(int index = 1; index < data.length; index ++)
      {  // assign the appropriate value to each one.
        /* YOUR BRILLIANT CODE HERE */
         data[index] += step;
@@ -117,6 +117,7 @@ public class ArrayPractice
       {
         System.out.print(data[index] + " ");
       }
+    System.out.println();
   }
 
 
@@ -261,7 +262,7 @@ public class ArrayPractice
      If the input array contains 5,8,13,7,27,2
      After the routine, the array will contain 2,27,7,13,8,5
   */
-  public static void flip( int[] data )
+  public static void flip(int[] data )
   {
     /* YOUR BRILLIANT CODE HERE */
     for(int index = 0; index < data.length/2; index++)
@@ -290,7 +291,7 @@ public class ArrayPractice
 
     // First Occurrence
     int val = 3;
-    System.out.print("The index of the first occurence is :" + firstOccurence(data, val));
+    System.out.println("The index of the first occurence is :" + firstOccurence(data, val));
 
 
     // The sum of the array elements
@@ -298,7 +299,7 @@ public class ArrayPractice
 
     
     // Is your array sorted
-    System .out.print("Is your arrays sorted:" + isSorted(data));
+    System .out.println("Is your array sorted:" + isSorted(data));
 
     // What is the maximum value
     System.out.println("The maximum value of the array is:" + findMaxValue(data));
@@ -308,8 +309,8 @@ public class ArrayPractice
 
     
     // Flipping the array
-    int [] data3 = flip(data));
-    printArray(data3);
+    flip(data);
+    printArray(data);
 
     // add calls to show that the methods you write work.
   }

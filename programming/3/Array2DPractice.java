@@ -186,6 +186,15 @@ public class Array2DPractice
      definition of exploding).
      Example:
      Given the array
+     qqzqq
+     qqqqq
+     qqqqq
+     qqqqq
+     qzqqq
+     qqqqq
+     qqqqz
+     
+     explodeAllchar(board,'z') will change board to:
      qXzXq
      qXXXq
      qqqqq
@@ -193,11 +202,21 @@ public class Array2DPractice
      XzXqq
      XXXXX
      qqqXz
-     explodeAllchar(board,'z') will change board to:
   */
   public static void explodeAllChar(char[][] board, char c)
   {
     /* YOUR AWESOME CODE HERE */
+    for(int row = 0; row < board.length; row++)
+      {
+        for(int col = 0; col <board[row].length; col++)
+          {
+            if(board[row][col]== c)
+            {
+              explodeSquare(board, row, col);
+            }
+              
+          }
+      }
   }
 
 
@@ -239,6 +258,14 @@ public class Array2DPractice
   public static void downString( char[][] board, int row, int col, String word )
   {
     /* YOUR AWESOME CODE HERE */
+    int index = 0;
+    for(int r = row; r < board.length; r++)
+      {
+        
+          board[row][col] = word.charAt(index);// word.substring(index, index+1);
+          index++;
+         
+      }
   }
 
 
@@ -246,23 +273,37 @@ public class Array2DPractice
   {
     char[][] b = buildBoard(5,10,'z');
     printBoard(b);
-    //setRow(b,2,'M');
     System.out.println();
+    
+    setRow(b,2,'M');
     printBoard(b);
     System.out.println();
+    
     explodeSquare(b,2,2);
     printBoard(b);
     System.out.println();
+    
     explodeSquare(b,0,2);
     printBoard(b);
     System.out.println();
+    
     explodeSquare(b,2,9);
     printBoard(b);
     System.out.println();
+    
     explodeSquare(b,0,0);
     printBoard(b);
     System.out.println();
+    
     explodeSquare(b,4,9);
+    printBoard(b);
+    System.out.println();
+
+    explodeAllChar(b,'S');
+    printBoard(b);
+    System.out.println();
+
+    downString(b,4,3,"sale");
     printBoard(b);
     System.out.println();
     /*

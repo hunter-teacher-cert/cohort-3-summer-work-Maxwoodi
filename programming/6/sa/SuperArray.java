@@ -1,17 +1,15 @@
 /**
  * SuperArray by Team MarvelvsDC
- * First Last
- * collaborators: First Last, First Last
+ * Maxwell Yearwood
+ * collaborators:  Adam Prado, Jessica Novillo Argudo, Qianhui Vanessa Zou
  */
 
 /**
    SKELETON
    SuperArray is a wrapper class for an array.
-
    Provides "pass-thru" accessibility to pre-existing array capabilities:
    - get/set by index
    - get length
-
    Adds functionality:
    - dynamic capacity
    - auto-grow capacity if necessary
@@ -40,10 +38,10 @@ public class SuperArray
   {
     //init underlying/inner storage of specified capacity
     /* YOUR SIMPLE+SMART CODE HERE */
-
+    data= new int[size] ;
     //init instance vars
     /* YOUR SIMPLE+SMART CODE HERE */
-
+    numberElements = 0;
   }
 
   //default constructor -- initializes capacity to 10
@@ -51,9 +49,11 @@ public class SuperArray
   {
     //init underlying/inner storage of capacity 10
         /* YOUR SIMPLE+SMART CODE HERE */
-
+      data= new int[10] ;
     //init instance vars
         /* YOUR SIMPLE+SMART CODE HERE */
+      numberElements = 0;
+    
   }
 
 
@@ -68,6 +68,12 @@ public class SuperArray
        Implement the rest of this method first,
        then only write this section once the rest is tested and working.
     */
+
+    if (data.length == numberElements){
+      grow();
+    }
+    data[numberElements] = value;
+    numberElements ++;
     /* YOUR SIMPLE+SMART CODE HERE */
 
     // add item
@@ -84,20 +90,26 @@ public class SuperArray
   {
     //return whether this SuperArray instance is empty
     /* YOUR SIMPLE+SMART CODE HERE */
+    return numberElements==0;
   }
 
 
-  public int get(int index)
-  {
-    //return item at index
-    /* YOUR SIMPLE+SMART CODE HERE */
-  }
+  // public int get(int index)
+  // {
+  //   //return item at index
+  //   /* YOUR SIMPLE+SMART CODE HERE */
+  // }
 
 
   public String toString()
   {
     //return stringified version of this Object
     /* YOUR SIMPLE+SMART CODE HERE */
+    String str = "";
+    for(int i=0; i<numberElements+1; i++){
+      str += data[i];
+    }
+    return str;
   }//end toString()
 
 

@@ -61,6 +61,11 @@ public class SuperArray
   public void add( int value )
   {
     // test to see if we need to grow, then grow
+
+    if (data.length == numberElements){
+      grow();
+    }
+    
     /**
        IMPORTANT:
        This is the first code that should run in this method
@@ -69,9 +74,7 @@ public class SuperArray
        then only write this section once the rest is tested and working.
     */
 
-    if (data.length == numberElements){
-      grow();
-    }
+    
     data[numberElements] = value;
     numberElements ++;
     /* YOUR SIMPLE+SMART CODE HERE */

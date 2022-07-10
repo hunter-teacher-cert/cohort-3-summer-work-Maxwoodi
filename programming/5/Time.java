@@ -103,7 +103,15 @@ public class Time {
       hours = hours + other.hours;
       minutes = minutes + other.minutes;
       seconds = seconds + other.seconds;
+    if(minutes >= 60 || minutes >=60)
+    {
+      int totalInSeconds = hours * 3600 + minutes*60 + seconds;
 
+      hours = totalInSeconds/3600;
+      minutes = (totalInSeconds % 3600)/60;
+      seconds = ((totalInSeconds % 3600)%60);
+    }
+      
     }
 
 

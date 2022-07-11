@@ -33,7 +33,7 @@ public class BinSearch
     int mPos = (loPos + hiPos) / 2; //init tracker var for middle position
 
     //exit case. If lo & hi have crossed, target not present
-    if ( a[loPos] > a[hiPos] ) /* YOUR SMART CODE HERE */
+    if ( loPos > hiPos ) /* YOUR SMART CODE HERE */
       return tPos ;   /* YOUR SMART CODE HERE */
 
     // target found ; 
@@ -42,11 +42,11 @@ public class BinSearch
     }
     // value at mid index higher than target t; // 
     else if ( a[mPos]> target /* YOUR SMART CODE HERE */ ) {
-               hiPos = mPos - 1;      /* YOUR SMART CODE HERE */
+           return binSearchRec(a, target, loPos, mPos-1);  /* YOUR SMART CODE HERE */
     }
     // value at mid index lower than target ; 
     else if (a[mPos] < target /* YOUR SMART CODE HERE */ ) {
-              loPos = mPos + 1; /* YOUR SMART CODE HERE */
+           return binSearchRec(a, target, mPos + 1, hiPos); /* YOUR SMART CODE HERE */
     }
 
     return tPos;

@@ -1,6 +1,7 @@
 /**
- * SuperArray by Team Room 8
-Adam Prado, Jessca Novillo Argudo, Qianhui Vanessa Zou, Maxwell Yearwood
+ * SuperArray by Team MarvelvsDC
+ * Maxwell Yearwood
+ * collaborators:  Adam Prado, Jessica Novillo Argudo, Qianhui Vanessa Zou
  */
 
 /**
@@ -13,9 +14,6 @@ Adam Prado, Jessca Novillo Argudo, Qianhui Vanessa Zou, Maxwell Yearwood
    - dynamic capacity
    - auto-grow capacity if necessary
 */
-
-
-
 
 import java.io.*;
 import java.util.*;
@@ -96,11 +94,11 @@ public class SuperArray
   }
 
 
-  public int get(int index)
-  {
-    //return item at index
-    return data[index];
-  }
+  // public int get(int index)
+  // {
+  //   //return item at index
+  //   /* YOUR SIMPLE+SMART CODE HERE */
+  // }
 
 
   public String toString()
@@ -108,8 +106,8 @@ public class SuperArray
     //return stringified version of this Object
     /* YOUR SIMPLE+SMART CODE HERE */
     String str = "";
-    for(int i=0; i<numberElements; i++){
-      str += data[i] + ", ";
+    for(int i=0; i<numberElements+1; i++){
+      str += data[i];
     }
     return str;
   }//end toString()
@@ -121,7 +119,7 @@ public class SuperArray
   public String debug()
   {
     String s = "";
-    s = "Size: " + data.length;
+    s = "Size: " + this.data.length;
     s = s + " LastItem: " + numberElements + "  Data: ";
     for (int i = 0; i < numberElements; i++) {
       s = s + data[i] + ", ";
@@ -135,50 +133,25 @@ public class SuperArray
   {
     // shift items down to remove the item at index
     /* YOUR SIMPLE+SMART CODE HERE */
-    for(int i=index; i<numberElements -1; i++){
-      data[i]=data[i+1];
-    }
+
     // subtract fom numElements;
-    
-    numberElements -- ;
     /* YOUR SIMPLE+SMART CODE HERE */
   }
 
-  public void set(int index, int value){
-
-    if(index<=numberElements && index>=0){
-      data[index]=value;
-    }else{
-      System.out.println("Out of range! Index is larger than list, did not add element to list");
-    }
-    
-    
-  }
 
   public void add(int index, int value)
   {
+    // see if there's enough room
+    /* YOUR SIMPLE+SMART CODE HERE */
 
-  if(index<=numberElements && index>=0){
-           // see if there's enough room
-        /* YOUR SIMPLE+SMART CODE HERE */
-        if (data.length == numberElements){
-          grow();
-        }
-        // shift elements toward the end of the array
-        /* YOUR SIMPLE+SMART CODE HERE */
-       for(int i=numberElements;i>index;i--){
-         data[i]=data[i-1];
-       }
-        // insert new element
-        /* YOUR SIMPLE+SMART CODE HERE */
-        data[index] = value;
-        // increment numElements
-        /* YOUR SIMPLE+SMART CODE HERE */
-        numberElements ++;
-      }else{
-      System.out.println("Out of range! Index is larger than list, did not add element to list");
-    }
-   
+    // shift elements toward the end of the array
+    /* YOUR SIMPLE+SMART CODE HERE */
+
+    // insert new element
+    /* YOUR SIMPLE+SMART CODE HERE */
+
+    // increment numElements
+    /* YOUR SIMPLE+SMART CODE HERE */
   }
 
 
@@ -187,17 +160,12 @@ public class SuperArray
     // create a new array with extra space
     // Q: How did you decide how much to increase capacity by?
     /* YOUR SIMPLE+SMART CODE HERE */
-    int[] dataNew = new int[2*numberElements];
-    
+
     // copy over all the elements from the old array to the new one
     /* YOUR SIMPLE+SMART CODE HERE */
-  for(int i=0; i<data.length; i++){
-    dataNew[i] = data[i];
-  }
-    
+
     // point data to the new array
     // Q: How does this look when illustrated using encapsulation diagram?
-    data = dataNew;
     /* YOUR SIMPLE+SMART CODE HERE */
   }//end grow()
 

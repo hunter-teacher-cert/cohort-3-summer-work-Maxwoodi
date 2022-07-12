@@ -1,0 +1,27 @@
+//4.11 exercise 1.
+
+ // Part 1: What is the output of the following program
+All methods are public and static. ping() is a void method that prints out a period and places the cursor on the next line.
+
+The baffle() is another method that displays the string wug. The cursors remains on the same line. 
+The ping() method is then called to output the period after wug and place the cursor on the next line. 
+
+The overall program output is:
+
+No, I wug.
+You wugga wug.
+I wug.
+Cursor
+
+//Part 2: Draw a stack diagram that shows the state of the program the first time ping() is invoked.
+
+
+
+
+//Part 3
+ Invoking baffle() at the end of the ping() method will display the following output.
+
+The code would call baffle() and ping() infinitely.
+
+
+

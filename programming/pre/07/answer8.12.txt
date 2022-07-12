@@ -1,0 +1,59 @@
+// Exercise 8.12 Question# 2 Method #1 
+
+The banana() methods finds the product of the integer elements of array "a" and return that product.
+
+The reference variable "a" passes the reference of the array of integers.
+
+The integer variable "kiwi" is initialized to one and is used to store the product
+of the elements to the array.
+
+The integer variable "i" is initialized to zero. This variable is used to update the while loop
+
+and compare the number of iterations against the length of the array of integers, "a.length"
+
+
+
+// Exercise 8.12 Question# 2 Method #2 
+
+The grapefruit() method searches for the presence of a specific integer in an array of integers.
+The index is returned if the that integer is found. Negative one is returned otherwise. 
+
+
+The array of integers is reference by "a" while "grape" represents the integer element that
+ is the goal of the search.
+
+The variable "i" is used to represent the index of each element of the array. "a.length" represents the length 
+of the array.
+
+
+
+
+
+// Exercise 8.12 Question# 2 Method #3 
+
+
+The pineapple() method is used to count the number of occurences of a given integer in an array of
+integers, a,  and return that count.
+
+ 
+
+ a ---- represents the passing of the reference of an array of integers. 
+
+"apple" ---- represents the target integer
+
+"pine" -----represents each element in the array being counted.
+
+"pear" is an integer counter variable initialized to store zero. It is used to store the count.
+
+
+
+
+
+
+
+
+
+
+
+
+

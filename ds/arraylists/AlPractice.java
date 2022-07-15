@@ -1,6 +1,10 @@
 import java.io.*;
 import java.util.*;
-
+/**
+ALPractice.java
+Owner:  Maxwell Yearwood
+Collaborators: William L,	Thea W  (Room 3)
+**/
 /** Methods to write
 
 Basic level:

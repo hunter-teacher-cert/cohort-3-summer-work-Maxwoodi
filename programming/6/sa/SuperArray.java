@@ -1,15 +1,18 @@
 /**
- * SuperArray by Team MarvelvsDC
+ * SuperArray by Team Room 8
  * Maxwell Yearwood
- * collaborators:  Adam Prado, Jessica Novillo Argudo, Qianhui Vanessa Zou
+ * collaborators: Adam Prado, Qianhui Vanessa Zou, Jessica Novillo Argudo
  */
+
 
 /**
    SKELETON
    SuperArray is a wrapper class for an array.
+
    Provides "pass-thru" accessibility to pre-existing array capabilities:
    - get/set by index
    - get length
+
    Adds functionality:
    - dynamic capacity
    - auto-grow capacity if necessary
@@ -36,24 +39,23 @@ public class SuperArray
   //overloaded constructor -- allows specification of initial capacity
   public SuperArray( int size )
   {
+    
     //init underlying/inner storage of specified capacity
-    /* YOUR SIMPLE+SMART CODE HERE */
-    data= new int[size] ;
     //init instance vars
-    /* YOUR SIMPLE+SMART CODE HERE */
+    data = new int[ size ];
     numberElements = 0;
+
   }
 
   //default constructor -- initializes capacity to 10
   public SuperArray()
   {
-    //init underlying/inner storage of capacity 10
-        /* YOUR SIMPLE+SMART CODE HERE */
-      data= new int[10] ;
-    //init instance vars
-        /* YOUR SIMPLE+SMART CODE HERE */
-      numberElements = 0;
     
+    //init underlying/inner storage of capacity 10
+    //init instance vars
+    data = new int[ 10 ];
+    numberElements = 0;
+  
   }
 
 
@@ -61,6 +63,9 @@ public class SuperArray
   public void add( int value )
   {
     // test to see if we need to grow, then grow
+    if (data.length == numberElements){ 
+      grow();
+    }
     /**
        IMPORTANT:
        This is the first code that should run in this method
@@ -69,46 +74,41 @@ public class SuperArray
        then only write this section once the rest is tested and working.
     */
 
-    if (data.length == numberElements){
-      grow();
-    }
-    data[numberElements] = value;
-    numberElements ++;
     /* YOUR SIMPLE+SMART CODE HERE */
-
     // add item
-    /* YOUR SIMPLE+SMART CODE HERE */
-
+    data[numberElements] = value;
 
     // increment numberElements
-    /* YOUR SIMPLE+SMART CODE HERE */
+    numberElements ++;
 
   }//end add()
 
 
   public boolean isEmpty()
   {
+    
     //return whether this SuperArray instance is empty
-    /* YOUR SIMPLE+SMART CODE HERE */
-    return numberElements==0;
+    return numberElements == 0;
   }
 
 
-  // public int get(int index)
-  // {
-  //   //return item at index
-  //   /* YOUR SIMPLE+SMART CODE HERE */
-  // }
+  public int get(int index)
+  {
+    
+    //return item at index
+    return data[index];
+    
+  }
 
 
   public String toString()
   {
     //return stringified version of this Object
-    /* YOUR SIMPLE+SMART CODE HERE */
     String str = "";
-    for(int i=0; i<numberElements+1; i++){
-      str += data[i];
+    for (int i=0; i<numberElements; i++){
+      str += data[i] + " ";
     }
+
     return str;
   }//end toString()
 
@@ -118,55 +118,96 @@ public class SuperArray
   //(helper method for debugging/development phase)
   public String debug()
   {
+    
     String s = "";
-    s = "Size: " + this.data.length;
+    s = "Size: " + data.length;
     s = s + " LastItem: " + numberElements + "  Data: ";
     for (int i = 0; i < numberElements; i++) {
       s = s + data[i] + ", ";
     }
     s = s + "\n";
     return s;
+    
   }//end debug()
 
 
   public void remove(int index)
   {
+    
     // shift items down to remove the item at index
-    /* YOUR SIMPLE+SMART CODE HERE */
+    for (int i=index; i<numberElements - 1; i++){
+      data[i] = data[i + 1];
+    }
 
-    // subtract fom numElements;
-    /* YOUR SIMPLE+SMART CODE HERE */
+    // set last element as 0
+    // data[numberElements - 1] = 0; // after discussing in class we do not need this line, since numberElements is the indicator of meaningful elements
+    
+    // subtract from numElements;
+    numberElements --;
+
   }
 
-
+  
   public void add(int index, int value)
   {
-    // see if there's enough room
-    /* YOUR SIMPLE+SMART CODE HERE */
 
-    // shift elements toward the end of the array
-    /* YOUR SIMPLE+SMART CODE HERE */
-
-    // insert new element
-    /* YOUR SIMPLE+SMART CODE HERE */
-
-    // increment numElements
-    /* YOUR SIMPLE+SMART CODE HERE */
+    // check if index is not out of range. ex: large number like 2000 or negative numbers
+    if(index <= numberElements && index >= 0){
+      // if there is no more room in data
+      // then we call function grow to make the array larger
+      if (data.length == numberElements){
+        grow();
+      }
+  
+      // shift elements toward the end of the array
+      for (int i=numberElements; i> index; i--){
+        data[i] = data[i - 1];
+      }
+  
+      // insert new element
+      data[index] = value;
+  
+      // increment numElements
+      numberElements ++;
+    } else{
+      System.out.println("Out of range! Index is too large or negative, did not add element to list");
+    }
   }
+  
 
-
+  // make data grow if there is no more room
   private void grow()
   {
-    // create a new array with extra space
-    // Q: How did you decide how much to increase capacity by?
-    /* YOUR SIMPLE+SMART CODE HERE */
+    // create a new array with 5 extra spaces
+    int[] newData = new int[numberElements + 5];
+
+    // Q: How did you decide how much to increase capacity by? 
+    // Directions on GitHub ask to make the new array 5 units larger.
+    // Also, it is more efficient to add 5 elements or more than do it 1 by 1
 
     // copy over all the elements from the old array to the new one
-    /* YOUR SIMPLE+SMART CODE HERE */
+    for (int i=0; i<data.length; i++){
+      newData[i] = data[i];
+    }
 
     // point data to the new array
-    // Q: How does this look when illustrated using encapsulation diagram?
-    /* YOUR SIMPLE+SMART CODE HERE */
+    data = newData;
+    
+    // Q: How does this look when illustrated using encapsulation diagram
+    
   }//end grow()
 
+
+  // set value to indicated index
+  public void set(int index, int value){
+
+    // check if index is not out of range. ex: large number like 2000 or negative numbers
+    if(index <= numberElements && index >= 0){
+      data[index] = value;
+    }else{
+      System.out.println("Out of range! Index is too large or negative, did not add element to list");
+    }
+    
+  }
+  
 }//end class

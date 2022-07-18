@@ -1,0 +1,20 @@
+/*Maxwell Yearwood, Collaborators: Saranii Muller & Greg Sciame*/
+// Write your code below
+//PRIOR-KNOWLEDGE: conditionals, variables, functions, arrays, assignment operators
+//BIG IDEA: HOW DOES A 'FOR' LOOP WORK IN JAVASCRIPT?
+// students need to know the structure of a for loop after this lesson
+//this is an empty for loop: for(){}    
+//STUDENT-PROMPT: Display the code below and ask the class what lines 12-14 will do based on lines 8 & 9...possible guesses include "counts to 4", "it counts something", "starts at 0","It stops at 3 or 4","I don't know"
+/*PROVIDE:
+for(start; stop; update/iterate){
+  body, where the action takes place until the stopping condition is met
+}
+*/  //PROVIDE:   (the code below, but display 'counter=counter +1' BEFORE showing counter++)
+for (let counter = 0; counter < 4; counter++); {//DELIBERATE ERROR (unnecessary semi-colon)
+  console.log(counter);
+} //BEEEEG REVEAL IS THE LIST OF PRINTED NUMBERS
+//SHOW THE CLASS THAT 'counter' can be almost any word as long as it is the same each time it is typed
+//BASIC ASSIGNMENT: GET BEGINNER STUDENTS TO GET THE LOOP COUNT TO A DIFFERENT NUMBER
+//INTERMEDIATE ASSIGNMENT: DIFFERENT START & ENDING NUMBERS, AND COUNT BY SOMETHING OTHER THAN ONE
+//ADVANCED ASSIGNMENTS: GET ADVANCED STUDENTS TO MAKE THE LOOP COUNT BACKWARDS
+//MUST ANSWER QUESTION: WHAT 3 PARTS DOES A FOR() LOOP NEED TO WORK IN JS?  IN WHAT ORDER MUST THOSE 3 THINGS APPEAR?

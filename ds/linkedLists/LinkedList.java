@@ -43,11 +43,11 @@ public class LinkedList{
   */
   public void add(String value){
 
-    Node node = new Node();
-    node.data = value;
-    node.getNext() = null;
-    node.getNext() = head;
-    head = node;
+    Node walker = new Node();
+    walker.setData(value) ;
+    walker.setNext(null);
+    walker.setNext(head);
+    head = walker;
 
   }
 
@@ -65,22 +65,39 @@ public class LinkedList{
      }
       walker = walker.getNext();
 
-     {
+   }
     return "";
   }
 
-  /**
-  Return a string representation of the list
-  */
-  public String toString(){
-    return "" + getData() + "->";
+  
+ //Return a string representation of the list
+  
+   public String toString(){
+    Node walker = head;
+    String temp = " ";
+
+    while( walker!= null)
+      {
+       temp = temp + walker;
+       walker= walker.getNext();
+      }
+     temp = temp + "null";
+    return temp ;
   }
 
   /**
   returns the number of elements in the list
   */
   public int size(){
-    return 0;
+    int count = 0;
+    Node walker = head;
+    while(walker != null)
+      {
+        
+        count++;
+        walker = walker.getNext();
+      }
+    return count;
   }
 
 
@@ -100,8 +117,33 @@ public class LinkedList{
   "a"-> "z" -> "b" -> "c" -> "d"
 
   */
+     
   public void add(int index, String value){
+    Node node = new Node();
+    node.setData(value) ;
+    node.setNext(null);
+    
 
+    if(index == 0)
+    {
+      add(value);
+    }
+    else
+    { 
+      Node walker = head;
+      
+   for( int i= 0; i < index-1 ; i++)
+     {
+       
+       walker = walker.getNext();
+       
+     }
+     node.setNext(walker.getNext());
+      
+      walker.setNext(node);
+
+          
+    }
   }
 
 
@@ -115,8 +157,24 @@ public class LinkedList{
   indexOf("d") would return 3 since "d" is at location 3.
 
   */
+    
   public int indexOf(String value){
-    return 0;
+
+    Node walker = head;
+    int index = 0;
+
+    while( walker.getNext()!= null)
+      {
+        if(walker.getData().equals(value))
+        {
+          return index;
+        }
+        index++;
+        walker = walker.getNext();
+      }
+
+    
+    return -1;
   }
 
 
@@ -126,10 +184,30 @@ public class LinkedList{
 
   It should then copy all of the values to the array and return
   the array.
-
-  */
+*/
+  
   public String[] toArray(){
-    return null;
+    Node walker = new Node();
+      walker = head;
+  String[] nodeRay = new String[size()];
+     int count = 0;
+    while(walker.getNext()!=null)
+      { 
+        //System.out.println(count);
+        nodeRay[count] = walker.getData();
+       // System.out.println(walker.getData());
+        walker = walker.getNext();
+        count++;
+        
+      }
+      nodeRay[count]= walker.getData();
+
+   /** for(int index = 0; index <= nodeRay.length; index++)
+      {
+        nodeRay[index] = walker.getData();
+        walker= walker.getNext();
+      }*/
+    return nodeRay;
   }
 
 
@@ -145,6 +223,29 @@ public class LinkedList{
   remove(2) results in:
   "a"->"b"->"d"->"e"
   */
-  public void remove(int index){
+ public void remove(int index){
+   
+  if(index ==0)
+  {
+    head = head.getNext();
   }
+   else
+  {
+   Node walker = head;
+   Node n1 = head ;
+  for(int i = 0; i < index-1; i++)
+  {
+    walker = walker.getNext();
+  }
+    System.out.println(n1);
+    System.out.println(walker);
+    System.out.println("I am here");
+   n1 = walker.getNext();
+    System.out.println(n1);
+   walker.setNext(n1.getNext());
+    System.out.println(walker);
+    n1 = null;
+    System.out.println(n1);
+  } 
+ } 
 }

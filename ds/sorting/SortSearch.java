@@ -1,6 +1,9 @@
 import java.io.*;
 import java.util.*;
 
+/** Maxwell Yearwood
+*Collaborators: Christopher DeSilva, Harisson Fung, Quianhui Vanessa Zou
+*/
 /*
 
 Sort Project:
@@ -72,9 +75,13 @@ public class SortSearch{
     public int findSmallestIndex(int start){
 	int smallIndex = 0;
   Integer minValue = data.get(0);
-	     for(int index = start; index < data.Size(); index++)
+	     for(int index = start; index < data.size(); index++)
          {
-           if( )
+           if(data.get(index) < minValue)
+           {
+             minValue = data.get(index);
+             smallIndex = index;
+           }
          }
 	return smallIndex;
     }
@@ -86,7 +93,24 @@ public class SortSearch{
 
     */
     public void sort(){
-
+     for(int outer = 0; outer < data.size() - 1; outer++)
+       {
+          int minIndex=outer;
+        
+         for( int inner =outer + 1 ; inner < data.size(); inner++)
+           {
+             if( data.get(inner) < data.get(minIndex))
+             { 
+               
+               minIndex = inner;
+             }
+           }
+            //swap
+             Integer temp = data.get(minIndex);
+             data.set(minIndex,data.get(outer));
+             data.set(outer,temp);
+         
+       }
 
     }
 
@@ -104,18 +128,24 @@ public class SortSearch{
        This algorithm works on any ArrayList.
 
     */
-    public int linearSearch(int value){
-	
-	
-	return 0; // replace this return
+    public int linearSearch(int value)
+     {
+	    for( int index = 0; index < data.size(); index++)
+        {
+          if(data.get(index) == value)
+          {
+            return index;
+          }
+        }
+		return -1; // replace this return
     }
-    
+   
     /**
        Implement a binary search as specified by the comments
        
        This algorithm only works on sorted ArrayLists.
     */
-    public int binarySearch(int value){
+   /** public int binarySearch(int value){
 
 	// create assign variables  representing the high, low and middle indices 
 	// while we're not done:
@@ -124,7 +154,7 @@ public class SortSearch{
 
 	return 0;
 	    
-    }
+    }*/
     
     /**
        Implement a RECURSIVE binary search as specified by the comments
@@ -132,7 +162,7 @@ public class SortSearch{
        This algorithm only works on sorted ArrayLists.
     */
 
-    public int binarySearchRecursive(int value, int lowIndex, int highIndex){
+   /** public int binarySearchRecursive(int value, int lowIndex, int highIndex){
 
 	// refer to class discussion
 	
@@ -140,7 +170,7 @@ public class SortSearch{
 	    
     }
     
-	
+	*/
     public String toString(){
 	return ""+data;
     };

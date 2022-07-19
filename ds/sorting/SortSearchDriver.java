@@ -7,28 +7,35 @@ public class SortSearchDriver {
 
 	// Uncomment these to test part 1
 	
-	SortSearch ss = new SortSearch(20);
+	SortSearch ss = new SortSearch(15);
 	System.out.println(ss);
 	
 		
 	// Uncomment these to test part 2
 
-	// int i;
-	// i = ss.findSmallestIndex(0);
-	// System.out.println("ss["+ i +"] = "+ss.get(i)+" : " + ss);
+	/** int i;
+	 i = ss.findSmallestIndex(0);
+	System.out.println("ss["+ i +"] = "+ss.get(i)+" : " + ss);
+  System.out.println();*/
 
-	// i = sd2.findSmallestIndex(3);
-	// System.out.println("ss["+ i + "] = "+ss.get(i)+" : " + ss);
+	/**i = ss.findSmallestIndex(3);
+	 System.out.println("ss["+ i + "] = "+ss.get(i)+" : " + ss);
+   System.out.println();  
+   System.out.println();  */
 	
 	// Uncomment these to test part 3
 
-	// System.out.println(ss);
-	// ss.sort();
-	// System.out.println(ss);
+      
+	System.out.println(ss);
+	ss.sort();
+	System.out.println(ss);
+  System.out.println(); 
 	
-
-
-	      
+    //Testing Linear Search
+    //int found = linearSearch(12);
+   // System.out.println(" Your search result:" + linearSearch(12));
+    System.out.println();
+    
 
     }
 }

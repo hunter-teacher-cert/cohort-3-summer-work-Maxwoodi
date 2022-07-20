@@ -145,16 +145,39 @@ public class SortSearch{
        
        This algorithm only works on sorted ArrayLists.
     */
-   /** public int binarySearch(int value){
+   public int binarySearch(int value){
 
 	// create assign variables  representing the high, low and middle indices 
+     int low = 0;
+     int high = data.size();
+     int mid = (low + high)/2;
+     
 	// while we're not done:
+     for(int index = 0; index < data.size(); index++)
+       {
 	//   if the item is at data.get(middle), return middle
+         if(data.get(mid)== value)
+         {
+           return mid;
+         }
 	//   otherwise, update high, low, and middle
-
-	return 0;
+         else if( data.get(mid) < value)
+         {
+            low = mid + 1;
+            mid = (low + high)/2;
+         }
+         else
+         {
+           if(data.get(mid) > value)
+           {
+             high = mid - 1;
+             mid = (low + high)/2;
+           }
+         }
+       }
+	return -1;
 	    
-    }*/
+    }
     
     /**
        Implement a RECURSIVE binary search as specified by the comments
@@ -162,15 +185,36 @@ public class SortSearch{
        This algorithm only works on sorted ArrayLists.
     */
 
-   /** public int binarySearchRecursive(int value, int lowIndex, int highIndex){
+   public int binarySearchRecursive(int value, int lowIndex, int highIndex){
 
 	// refer to class discussion
-	
-	return 0;
+	    int mid = (lowIndex + highIndex)/2;
+     
+         if(data.get(mid)== value)
+         {
+           return mid;
+         }
+	//   otherwise, update high, low, and middle
+         else if( data.get(mid) < value)
+         {
+            lowIndex = mid + 1;
+            mid = (lowIndex + highIndex)/2;
+         }
+         else
+         {
+           if(data.get(mid) > value)
+           {
+             highIndex = mid - 1;
+             mid = (lowIndex + highIndex)/2;
+           }
+         }
+      return binarySearchRecursive(value, lowIndex, highIndex);
+       }
+//	return -1;
 	    
-    }
+  //  }
     
-	*/
+	
     public String toString(){
 	return ""+data;
     };
@@ -181,6 +225,6 @@ public class SortSearch{
 	
     }
     
-
+ 
     
 }

@@ -27,6 +27,8 @@ public class SortSearchDriver {
 
       
 	System.out.println(ss);
+  System.out.println();
+      
   System.out.println("Selection sort");
 	ss.sort();
   System.out.println();    
@@ -52,11 +54,13 @@ public class SortSearchDriver {
   System.out.println();
 
   // Testing Collections Sort
-    SortSearch ss1 = new SortSearch(20);
-    System.out.println(ss1);
-   System.out.println(" Built in Sort");
-      ss1.builtinSort();
-   System.out.println();
+  SortSearch ss1 = new SortSearch(20);
+  System.out.println(ss1);
+  System.out.println(" Built in Sort");
+  ss1.builtinSort();
+  System.out.println();
+
+  
       
     }
 }

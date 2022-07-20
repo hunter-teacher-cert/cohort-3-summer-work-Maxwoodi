@@ -185,10 +185,15 @@ public class SortSearch{
        This algorithm only works on sorted ArrayLists.
     */
 
-   public int binarySearchRecursive(int value, int lowIndex, int highIndex){
+   public int binarySearchRecursive(int value, int lowIndex, int highIndex)
+  {
 
 	// refer to class discussion
 	    int mid = (lowIndex + highIndex)/2;
+      if( lowIndex > highIndex)
+        {    
+          return -1;
+        }
      
          if(data.get(mid)== value)
          {
@@ -197,22 +202,22 @@ public class SortSearch{
 	//   otherwise, update high, low, and middle
          else if( data.get(mid) < value)
          {
-            lowIndex = mid + 1;
-            mid = (lowIndex + highIndex)/2;
+           return binarySearchRecursive(value, mid + 1, highIndex);
+            //mid = (lowIndex + highIndex)/2;
          }
-         else
+         else 
          {
-           if(data.get(mid) > value)
-           {
+             if(data.get(mid) > value)
              highIndex = mid - 1;
-             mid = (lowIndex + highIndex)/2;
-           }
+             //mid = (lowIndex + highIndex)/2;
+             return binarySearchRecursive(value,lowIndex, mid - 1);
          }
-      return binarySearchRecursive(value, lowIndex, highIndex);
-       }
-//	return -1;
-	    
-  //  }
+          
+  
+}
+      
+       	    
+  
     
 	
     public String toString(){

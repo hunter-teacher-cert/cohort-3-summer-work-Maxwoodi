@@ -38,13 +38,17 @@ public class SortSearchDriver {
       
     //Testing Linear Search
     
+      
   System.out.println(" Linear Search:value located at index:" + ss.linearSearch(12));
+  
   System.out.println();
 
     // Testing Binary Search
+    
       
    int binaryIndex = ss.binarySearch(12);
   System.out.println(" Binary Search result:" + binaryIndex);
+  
   System.out.println();
 
 
@@ -53,13 +57,14 @@ public class SortSearchDriver {
   System.out.println("Recursive Binary Search:"+ ss.binarySearchRecursive(12,0, 20));
   System.out.println();
 
-  // Testing Collections Sort
-  SortSearch ss1 = new SortSearch(20);
-  System.out.println(ss1);
-  System.out.println(" Built in Sort");
-  ss1.builtinSort();
-  System.out.println();
+  // // Testing Collections Sort
+  // SortSearch ss1 = new SortSearch(20);
+  // System.out.println(ss1);
+  // System.out.println(" Built in Sort");
+  // ss1.builtinSort();
+  // System.out.println();
 
+ 
   
       
     }

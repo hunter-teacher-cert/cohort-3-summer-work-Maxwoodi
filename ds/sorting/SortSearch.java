@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 /** Maxwell Yearwood
-*Collaborators: Christopher DeSilva, Harisson Fung, Quianhui Vanessa Zou
+*Collaborators: Sam Lojacono, Harisson Fung,
 */
 /*
 
@@ -57,6 +57,7 @@ public class SortSearch{
 	
     }
 
+  
     /* Convenience function to get data out of the ArrayList from the driver */
     public int get(int index){
 	return this.data.get(index);
@@ -207,12 +208,16 @@ public class SortSearch{
          }
          else 
          {
+           {
              if(data.get(mid) > value)
+             {
              highIndex = mid - 1;
+             }
              //mid = (lowIndex + highIndex)/2;
              return binarySearchRecursive(value,lowIndex, mid - 1);
+           }
          }
-          
+   
   
 }
       

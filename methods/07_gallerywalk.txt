@@ -11,7 +11,7 @@ USAGE OF TOP SECTION:
 DISCOVERIES:
 * any cool tips/tricks/hacks you learned
 * 1 per line, please
-* You do not need to knew several languages to do a great web page
+* Animated Images can be included
 
 LINGERING QUESTIONS:
 * 1 per line, please
@@ -20,6 +20,7 @@ LINGERING QUESTIONS:
 
 COMMENTS/CONCERNS/OTHER:
 * 1 per line, please
+* You do not need to knew several languages to do a great web page
 ====================================================
 
 

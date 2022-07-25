@@ -64,7 +64,13 @@ public class SortSearchDriver {
   // ss1.builtinSort();
   // System.out.println();
 
- 
+    ArrayList<Integer> a= ss.buildIncreasingList(20);
+	System.out.println(a);
+
+	// build a second Arralist here
+	
+
+	// test your merge routine here
   
       
     }

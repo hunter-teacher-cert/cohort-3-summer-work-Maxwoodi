@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.*;
 
+/** Maxwell Yearwood, Amanda Lee, Qianhui Vanessa*/
 public class SortSearchDriver {
     public static void main(String[] args) {
 
@@ -64,14 +65,48 @@ public class SortSearchDriver {
   // ss1.builtinSort();
   // System.out.println();
 
-    ArrayList<Integer> a= ss.buildIncreasingList(20);
-	System.out.println(a);
+    ArrayList<Integer> list1a= ss.buildIncreasingList(20);
+	System.out.println(list1a);
+   System.out.println();
 
 	// build a second Arralist here
-	
-
+	ArrayList<Integer> list2a= ss.buildIncreasingList(9);
+	System.out.println(list2a);
+  System.out.println();
+      
 	// test your merge routine here
+  System.out.println(ss.merge(list1a, list2a));
+
+  //MergeSort:
+        
+  	ArrayList<Integer> list1 = ss.buildIncreasingList(20);
+    System.out.println("\nList1:");
+    System.out.println(list1);
   
+  	// build a second Arralist here
+  	ArrayList<Integer> list2= ss.buildIncreasingList(15);
+    System.out.println("\nList2:");
+	  System.out.println(list2);
+  
+  	// test your merge routine here
+    ArrayList<Integer> result = ss.merge(list1,list2);
+    System.out.println("\nResult (merge of list1 and list2):");
+	  System.out.println(result);
+
+
+    // mergeSort
+    // public ArrayList<Integer> mergeSort(ArrayList<Integer> list){
+    //        (returns an arrayList)
+    ArrayList<Integer> list3= ss.buildIncreasingList(10);
+    list3.add(5);
+    list3.add(99);
+    System.out.println("\nList3:");
+	  System.out.println(list3);
+    
+    ArrayList<Integer> newlist = ss.mergeSort(list3);
+    System.out.println("\nTesting mergeSort on arraylist list3:");
+    System.out.println(newlist);
+
       
     }
 }

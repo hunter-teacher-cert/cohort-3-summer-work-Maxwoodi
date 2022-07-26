@@ -3,7 +3,7 @@ import java.util.*;
 
 /** Maxwell Yearwood
 *Collaborators: Sam Lojacono, Harisson Fung,
-*/
+** Maxwell Yearwood, Amanda Lee, Qianhui Vanessa*/
 /*
 
 Sort Project:
@@ -270,28 +270,118 @@ public class SortSearch{
 
 	// code for merge
       ArrayList<Integer> together = new ArrayList<Integer>(list1.size() + list2.size());
-      int i = 0;
-      int k = 0;
-      int index = 0;
-      While( i < list1.size() || k <list2.size())
+      
+     /**
+      while( 0 < list1.size() && 0 <list2.size())
         {
-          if( list1.get(i) < list2.get(k))
+          if( list1.get(0) < list2.get(0))
           {
-              together.add(index);
-            i++;
-            index++;
+              together.add(list1.get(0));
+            
+            list1.remove(0);
           }
           else
           {
-            together.add(index);
-            k++;
-            index++;
+            together.add(list2.get(0));
+            
+            list2.remove(0);
                      
           }
         }
-	
-	return new ArrayList<Integer>(); // replace this line
+	    while(0 < list1.size())
+        {
+          together.add(list1.get(0));
+          
+          list1.remove(0);
+        }
+       while(0 < list2.size())
+         {
+           together.get(list2.get(0));
+           
+           list2.remove(0);
+         }*/
+  int i = 0, k= 0;
+while( i < list1.size() && k <list2.size())
+        {
+          if( list1.get(i) < list2.get(k))
+          {
+              together.add(list1.get(i));
+            
+           // list1.remove(i);
+             i++;
+          }
+          else
+          {
+            together.add(list2.get(k));
+           
+            //list2.remove(k);
+             k++;
+                     
+          }
+        }
+	    while(i < list1.size())
+        {
+          together.add(list1.get(i));
+          
+          //list1.remove(i);
+          i++;
+        }
+       while(k < list2.size())
+         {
+           together.add(list2.get(k));
+           
+          // list2.remove(k);
+           k++;
+         }
+
+      
+	return together; // replace this line
+    }
+  
+   public ArrayList<Integer> mergeSort(ArrayList<Integer> list){
+    
+    int n = list.size(); 
+    
+    ArrayList<Integer> left = new ArrayList<Integer>();
+    ArrayList<Integer> right = new ArrayList<Integer>();
+    //System.out.println(n);
+  
+//     check for base case (if n < 2)
+    if (n < 2) {
+      return list;
     }
     
+//     if not the base case
+    else {
+      // split in two lists
+      for (int i = 0; i < n/2; i++) {
+        left.add(list.get(i));
+        // System.out.println(left.get(i));
+      }
+      // System.out.println(left);
+      
+      for (int i = n/2; i < n; i++) {
+        right.add(list.get(i));
+      }
+
+      ArrayList<Integer> sortLeft = mergeSort(left);
+      ArrayList<Integer> sortRight = mergeSort(right);
+
+      ArrayList<Integer> sorted = merge(sortLeft,sortRight);
+  
+      return sorted;
+    }
+//     split in two lists ✅
+//     meregSort the left half
+//     mergeSort the right half
+//     merge them together into a new list
+//     return that new list 
+      
+  }
+
+
+  public void msort(){
+    data =  mergeSort(data);
+  }
     
 }

@@ -9,7 +9,7 @@ public class SortSearchReferenceDriver
   {
     Scanner userInput = new Scanner(System.in);
 
-    System.out.print("How large of an array?");
+    System.out.print("How large of an ArrayList?");
     int size = userInput.nextInt();
     
    	SortSearchReference ss = new SortSearchReference(size);
@@ -44,7 +44,8 @@ public class SortSearchReferenceDriver
     System.out.println("Time for " + valueInQuestion + " using binarySearchRecursive...");
     System.out.println("Size: " + size + " Time: " + elapsed);
     System.out.println();
-    
+
+  
 
     
   }

@@ -107,6 +107,7 @@ public class SortSearchDriver {
     System.out.println("\nTesting mergeSort on arraylist list3:");
     System.out.println(newlist);
 
+   
       
     }
 }

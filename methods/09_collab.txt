@@ -1,0 +1,64 @@
+Aim: Array traversal
+
+
+/**Collaboration:
+* students will use the Think-Pair-Strategy. Be sure to make *use of the rubber duck strategy during the THINK-Phase 
+*If stuck either the teacher or students who are finished
+* will provide assistance as requested.
+*/
+
+
+Mini-Lesson Plan
+/** Get in your assignment groups.
+* Use Think- Pair-Strategy to work on the first question.
+* Be sure to place appropriate comments in your code.
+* Confirm your answer by running your code
+*/
+
+// WARM -UP
+public static void print(int [] aRay)
+{  
+  // Place comments here
+   int index =0 ;
+
+  // Place comments here
+  while( index < aRay.length)
+  {  
+     // Place comments here
+     System.out.print( aRay[index]);
+     
+     // Place comments here
+     index++;
+
+  } // end of loop
+}// end of method
+
+
+/** Activity:
+** Continue to solve each problem below in your groups using *the Think-Pair-Share strategy.
+* be sure to let me know if/when you are stuck.
+*/
+
+
+/**Student Task:
+** Solve each problem below
+*/
+
+public static void print( int [] aRay)
+{  int index =0 ;
+  // place for loop here
+
+      // print statement here
+  
+}//end of method
+
+
+public static void print( int [] aRay)
+{  int index =0 ;
+  // place for each loop here
+
+      // print statement here
+  
+}// end of method
+
+Write two methods to print out the values of an array of doubles in reverse order. Use two different type of loops.

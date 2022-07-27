@@ -2,8 +2,9 @@ Aim: Array traversal
 
 
 /**Collaboration:
-* students will use the Think-Pair-Strategy. Be sure to make *use of the rubber duck strategy during the THINK-Phase 
-*If stuck either the teacher or students who are finished
+* students will use the Think-Pair-Share strategy. Be sure to *make use of the rubber duck strategy during the THINK-Phase 
+*if stuck.
+*Either the teacher or students who are finished
 * will provide assistance as requested.
 */
 
@@ -15,7 +16,21 @@ Mini-Lesson Plan
 * Confirm your answer by running your code
 */
 
-// WARM -UP
+// WARM -UP:
+* Teacher models Think-Pair-Share
+* Prompts:
+   * Identity each part of the method
+      * method header
+      * code blocks
+   * Write down your commnetns as you trace the code
+   * What does this method accomplish?
+   * Use a table to trace the code? 
+       * Hint: Use int [] aRay = {7,2,9,2,1};
+   * Share your results with your partner.
+   * Run your code in Replit. How does your anwer compare 
+       with Replit?
+   * Be prepared to share with class.
+
 public static void print(int [] aRay)
 {  
   // Place comments here
@@ -35,7 +50,7 @@ public static void print(int [] aRay)
 
 
 /** Activity:
-** Continue to solve each problem below in your groups using *the Think-Pair-Share strategy.
+** Continue to solve each problem below in your groups using *the Think-Pair-Share  and Rubber Duck strategies.
 * be sure to let me know if/when you are stuck.
 */
 

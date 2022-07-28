@@ -4,7 +4,22 @@ public class ExpressionTree{
     //You must write this method:
     //Calculate the value of the entire tree
     public double evaluate(){
-      return 10000000000000.0;//replace this
+
+      // Return data if node is a leaf return the value
+       if(isValue())
+       {
+         return value;
+       }
+       else 
+       { // Evaluate and store left child
+        //int l = left.evaluate();
+     
+     
+         // Evaluate and store right child
+        // int r = right.evaluate();
+       }
+      
+      return apply(left.evaluate(), right.evaluate(), operator);//result of operation;
     }
 
     //You must write this method:
@@ -25,12 +40,25 @@ public class ExpressionTree{
       }
       else
       {
-        output += "(" + left.toString() + "" + )
+        output += "(" + left.toString() + operator + right.toString() + ")";
+          
       }
      return output;
     }
 
-
+ public String toStringPrefix() 
+  {
+     String output = "";
+    if(isValue())
+    {
+      output += value;
+    }
+    else
+    {
+      output += "(" + operator + " " + left.toString() + " " + right.toString() + ")";
+    }
+    return output;
+  }
 
 
   private double value;
@@ -71,6 +99,10 @@ public class ExpressionTree{
     return a-b;
    }else if(op == '*'){
     return a*b;
+   }else if(op == '^'){
+     return Math.pow(a,b);
+   }else if(op == 'r'){
+     return Math.pow(a,1/b);  
    }else{ //  if(op == '/'){ //or any invalid operators
     return a/b;
    }

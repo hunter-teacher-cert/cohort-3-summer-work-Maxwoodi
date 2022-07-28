@@ -25,8 +25,8 @@ optionally with some treatment of how necessary each pre-req is..._
 ### Scaffolding / Differentiation 
 _an aspect of this activity well-suited to tiering / scaffolding / differentiation_
 * ELLs - standard card deck vocab
-  * Numbers: Jack, Queen, King, Ace
-  * Suits: Clubs, Spades, Diamonds, Hearts 
+  * Numbers: Jack🂫, Queen🂭, King🂬, Ace🂡
+  * Suits: Clubs♣, Spades♠, Diamonds♢, Hearts♡ 
 * Adjust level of difficulty by handing out increasing the number of decks of cards
 * "Extreme fun form": have specific groups face off
 * Part 2: Different ways of ordering:

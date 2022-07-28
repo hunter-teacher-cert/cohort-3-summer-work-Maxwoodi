@@ -38,7 +38,7 @@ public class TreeDriver{
 
     //2. Trees with children
     //These need to be evaluated:
-    /**
+    
     ExpressionTree a = new ExpressionTree('+',one,one);//2.0  "(1.0 + 1.0)"
     ExpressionTree b = new ExpressionTree('-',five,ten);//-5.0 "(5.0 - 10.0)"
     ExpressionTree c = new ExpressionTree('*',three,four);//12.0 "(3.0 * 4.0)"
@@ -48,7 +48,7 @@ public class TreeDriver{
     System.out.println(b.toString() + " is equal to " + b.evaluate());
     System.out.println(c.toString() + " is equal to " + c.evaluate());
     System.out.println(d.toString() + " is equal to " + d.evaluate());
-    */
+    
     /** output:
     (1.0+1.0) is equal to 2.0
     (5.0-10.0) is equal to -5.0
@@ -58,7 +58,7 @@ public class TreeDriver{
 
 
     //3. Multi level trees which need to be evaluated:
-    /**
+    
     ExpressionTree e = new ExpressionTree('/',c,two);
     ExpressionTree f = new ExpressionTree('-',c,ten);
     ExpressionTree g = new ExpressionTree('+',b,c);
@@ -70,7 +70,7 @@ public class TreeDriver{
     System.out.println(g.toString() + " is equal to " + g.evaluate());
     System.out.println(h.toString() + " is equal to " + h.evaluate());
     System.out.println(i.toString() + " is equal to " + i.evaluate());
-    */
+
     /** output:
     ((3.0*4.0)/2.0) is equal to 6.0
     ((3.0*4.0)-10.0) is equal to 2.0
@@ -78,6 +78,20 @@ public class TreeDriver{
     ((1.0+1.0)*(1.0/2.0)) is equal to 1.0
     (((1.0+1.0)*(1.0/2.0))+1.0) is equal to 2.0
     */
+
+    //4. Challenge Activity #1
+
+    System.out.println(e.toStringPrefix() + " is equal to " + e.evaluate());
+    System.out.println(f.toStringPrefix() + " is equal to " + f.evaluate());
+    System.out.println(g.toStringPrefix() + " is equal to " + g.evaluate());
+    System.out.println(h.toStringPrefix() + " is equal to " + h.evaluate());
+    System.out.println(i.toStringPrefix() + " is equal to " + i.evaluate());
+
+    
+    //output came out (/ (3*4) 2), the * is not in front of the numbers
+    //final output should be (/ (* 3 4) 2)
+    
+    
 
   }
 }

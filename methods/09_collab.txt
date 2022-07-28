@@ -2,11 +2,17 @@ Aim: Array traversal
 
 
 /**Collaboration:
-* students will use the Think-Pair-Share strategy. Be sure to *make use of the rubber duck strategy during the THINK-Phase 
-*if stuck.
+* students will use the Think-Pair-Share strategy. Be sure to make use of the rubber duck strategy 
+during the THINK-Phase if stuck.
 *Either the teacher or students who are finished
 * will provide assistance as requested.
 */
+
+/* Long term goal: To establish a classroom culture of collaboration
+* Short Term goal: Model collaborative work and help students appreciate its utility
+* by making references to how software engineering is done in the real world and *commending students who were engaged in collaborative work.
+*/
+
 
 
 Mini-Lesson Plan
@@ -77,3 +83,11 @@ public static void print( int [] aRay)
 }// end of method
 
 Write two methods to print out the values of an array of doubles in reverse order. Use two different type of loops.
+
+/* Conclusion:
+* What helped you to get unstuck?
+* What did you learn today?
+* How do software engineers work on important tasks?
+* What part of today's lesson for you?
+* Any lingering questions?
+*/
